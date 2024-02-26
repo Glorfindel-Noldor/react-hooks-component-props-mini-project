@@ -1,17 +1,18 @@
-
 import React from "react";
 import Article from "./Article";
-import {blogData} from '../data/blog.js'
-function ArticleList(){
 
-const ledger = blogData.posts.map(post =>  <Article key={post.id} post={post} /> )
+function ArticleList({posts}){
 
 
     return(
-        <main>
-        {ledger}
-        </main>
+        <main>{posts.map((post)=>(
+            <Article key={post.id}
+                title={post.title}
+                date={post.date}
+                preview={post.preview}
+                minutes={post.minutes}
+            />
+        ))}</main>
     )
 }
-
 export default ArticleList;

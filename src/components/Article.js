@@ -1,15 +1,15 @@
 import React from "react";
+const ifNoDate = "January 1, 1970"
 
-
-const IFNoDate = "January 1, 1970"
-function Article({post}){
-    return(
+function Article({ title, date=ifNoDate, preview, minutes }){
+    return (
         <article>
-            <h3>{post.title}</h3>
-            <small>{post.date}</small>
-            <p>{post.preview}</p>
-            <p>{post.minutes} minutes</p>
+            <h3>{title}</h3>
+            <small>{date}</small>
+            <p>{preview}</p>
+            <p>{minutes}: minutes</p>
         </article>
-    )
+    );
 }
+
 export default Article;

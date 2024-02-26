@@ -1,17 +1,19 @@
 import React from "react";
-import blogData from "../data/blog";
-import Header from "./Header";
-import About from "./About";
-import ArticleList from "./ArticleList";
-
+import blogData from "../data/blog.js";
+import Header from "./Header.js";
+import About from "./About.js";
+import ArticleList from "./ArticleList.js";
 console.log(blogData);
 
 function App() {
+  const {name , image, about, posts } = blogData;
+
+
   return (
     <div className="App">
-      <Header name={blogData.name} />
-      <About image={blogData.image} about={blogData.about} />
-      <ArticleList  />
+      <Header name={name}/>
+      <About image={image} about={about} />
+      <ArticleList posts={posts}/>
     </div>
   );
 }
